@@ -2,14 +2,8 @@
 import sys
 
 
-# TODO
-
-
-
 for line in sys.stdin:
+    word, num = line.split('\t')
+    print('%s\t%s' % (num, word))
 
-       #TODO
 
-
-#TODO
-# print('%s\t%s' % (  ,  )) pass this output to reducer
