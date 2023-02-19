@@ -6,6 +6,7 @@ minHeap = []
 # input comes from STDIN
 for line in sys.stdin:
     numStr, word = line.split('\t')
+    word = word.strip()
     if numStr != '' and word != '':
         num = int(numStr)
         heapq.heappush(minHeap, (num, word))
