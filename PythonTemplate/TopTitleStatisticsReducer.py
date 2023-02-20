@@ -15,11 +15,11 @@ for line in sys.stdin:
         count += 1
         inputs.append(num)
 
-average = total / count
-print('Mean\t%s' % math.floor(average))
+average = math.floor(total / count)
+print('Mean\t%s' % average)
 print('Sum\t%s' % total)
 print('Min\t%s' % min(inputs))
 print('Max\t%s' % max(inputs))
 
-variance = sum([(i-average)**2 for i in inputs]) / (count - 1)
+variance = sum([(i-average)**2 for i in inputs]) / count
 print('Var\t%s' % math.floor(variance))
