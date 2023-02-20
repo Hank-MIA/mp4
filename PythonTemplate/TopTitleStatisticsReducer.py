@@ -3,10 +3,23 @@ import sys
 import math
 
 
-#TODO
-
+total = 0
+count = 0
+inputs = []
 for line in sys.stdin:
-    # TODO
+    _, numStr = line.split('\t')
+    numStr = numStr.strip()
+    if numStr != '':
+        num = int(numStr)
+        total += num
+        count += 1
+        inputs.append(num)
 
-#TODO
-# print('%s\t%s' % (  ,  )) print as final output
+average = total / count
+print('Mean\t%s' % math.floor(average))
+print('Sum\t%s' % total)
+print('Min\t%s' % min(inputs))
+print('Max\t%s' % max(inputs))
+
+variance = sum([(i-average)**2 for i in inputs]) / (count - 1)
+print('Var\t%s' % math.floor(variance))
