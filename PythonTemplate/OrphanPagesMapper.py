@@ -3,11 +3,13 @@ import sys
 
 
 for line in sys.stdin:
-    parent, kids = line.split(':')
-    parent = parent.strip()
-    print('%s\t%s' % (parent, 'P'))  # possibly orphan
+    line = line.strip()
+    if line:
+        parent, kids = line.split(':')
+        parent = parent.strip()
+        print('%s\t%s' % (parent, 'P'))  # possibly orphan
 
-    children = kids.strip().split(' ')
-    for child in children:
-        if child != '':
-            print('%s\t%s' % (child, 'N'))  # definitely not orphan
+        children = kids.strip().split(' ')
+        for child in children:
+            if child != '' and child != parent:
+                print('%s\t%s' % (child, 'N'))  # definitely not orphan
