@@ -10,7 +10,7 @@ for line in sys.stdin:
     if numStr != '' and word != '':
         num = int(numStr)
         heapq.heappush(minHeap, (num, word))
-        if len(minHeap) > 5:
+        if len(minHeap) > 10:
             heapq.heappop(minHeap)
 
 while minHeap:
