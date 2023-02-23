@@ -3,18 +3,18 @@ import sys
 
 
 leaguePath = sys.argv[1]
-#TODO
+leagueSet = set()
 
 
 with open(leaguePath) as f:
-	#TODO
-
-
-
+    line = f.readline().strip()
+    while line:
+        leagueSet.add(line)
+        line = f.readline().strip()
 
 
 for line in sys.stdin:
+    mem, numStr = line.strip().split('\t')
+    if mem in leagueSet:
+        print(line.strip())
 
-       #TODO
-
-       # print('%s\t%s' % (  ,  )) pass this output to reducer

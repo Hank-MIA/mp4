@@ -2,11 +2,20 @@
 import sys
 
 
-#TODO
-
+pp = dict()
 
 for line in sys.stdin:
-  # TODO
+    name, isOrphan = line.split('\t')
+    if pp.get(name, 'P') == 'N':
+        continue
+    pp[name] = isOrphan.strip()
 
-#TODO
-# print(xx) print as final output
+orphanList = []
+for k, v in pp.items():
+    if v == 'P':
+        orphanList.append(k)
+
+orphanList.sort()
+for orphan in orphanList:
+    print(orphan)
+

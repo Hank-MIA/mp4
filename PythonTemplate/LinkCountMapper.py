@@ -3,6 +3,8 @@ import sys
 
 
 for line in sys.stdin:
-  #TODO
+    _, links = line.split(':')
+    links = links.strip()
+    for link in links.split(' '):
+        print('%s\t%s' % (link, 1))
 
-  # print('%s\t%s' % (  ,  )) pass this output to reducer

@@ -1,11 +1,13 @@
 #!/usr/bin/env python3
 import sys
 
-#TODO
+linkCount = dict()
 
 # input comes from STDIN
 for line in sys.stdin:
-    # TODO
+    link, _ = line.split('\t')
+    linkCount[link] = linkCount.get(link, 0) + 1
 
-# TODO
-# print('%s\t%s' % (  ,  )) print as final output
+for k, v in linkCount.items():
+    print('%s\t%s' % (k, v))
+

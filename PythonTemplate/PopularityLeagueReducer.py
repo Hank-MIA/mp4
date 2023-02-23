@@ -1,11 +1,29 @@
 #!/usr/bin/env python3
 import sys
-#TODO
+import heapq
 
+minHeap = []
 # input comes from STDIN
 for line in sys.stdin:
-    # TODO
+    link, numStr = line.strip().split('\t')
+    heapq.heappush(minHeap, (int(numStr), link))
 
+indexedLinks = []
+index = 0
+valueSameIndex = 0
+preVal, link = heapq.heappop(minHeap)
+heapq.heappush((link, index))
 
-#TODO
-# print('%s\t%s' % (  ,  )) print as final output
+while minHeap:
+    val, link = heapq.heappop(minHeap)
+    index += 1
+    if val == preVal:
+        heapq.heappush(indexedLinks, (link, valueSameIndex))
+    else:
+        heapq.heappush(indexedLinks, (link, index))
+        valueSameIndex = index
+        preVal = val
+
+while indexedLinks:
+    link, index = heapq.heappop(indexedLinks)
+    print('%s\t%s' % (link, index))

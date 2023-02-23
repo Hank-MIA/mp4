@@ -3,6 +3,11 @@ import sys
 
 
 for line in sys.stdin:
-  # TODO
-  
-  # print('%s\t%s' % (  ,  )) pass this output to reducer
+    parent, kids = line.split(':')
+    parent = parent.strip()
+    print('%s\t%s' % (parent, 'P'))  # possibly orphan
+
+    children = kids.strip().split(' ')
+    for child in children:
+        if child != '':
+            print('%s\t%s' % (child, 'N'))  # definitely not orphan
