@@ -15,7 +15,7 @@ for line in sys.stdin:
 orphanList = []
 for k, v in pp.items():
     if v == 'P':
-        orphanList.append(k)
+        orphanList.append(int(k))
 
 orphanList.sort()
 for orphan in orphanList:
