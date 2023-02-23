@@ -14,7 +14,7 @@ for line in sys.stdin:
         if len(minHeap) > 5:
             heapq.heappop(minHeap)
 
-while heapq:
+while minHeap:
     num, link = heapq.heappop(minHeap)
     print('%s\t%s' % (link, num))
 
