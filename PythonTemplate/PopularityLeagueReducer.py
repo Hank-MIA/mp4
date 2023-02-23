@@ -5,8 +5,10 @@ import heapq
 minHeap = []
 # input comes from STDIN
 for line in sys.stdin:
-    link, numStr = line.strip().split('\t')
-    heapq.heappush(minHeap, (int(numStr), link))
+    line = line.strip()
+    if line:
+        link, numStr = line.split('\t')
+        heapq.heappush(minHeap, (int(numStr), link))
 
 indexedLinks = []
 index = 0

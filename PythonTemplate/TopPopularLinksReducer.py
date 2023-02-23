@@ -6,11 +6,13 @@ minHeap = []
 
 # input comes from STDIN
 for line in sys.stdin:
-    link, numStr = line.strip().split('\t')
-    num = int(numStr)
-    heapq.heappush(minHeap, (num, link))
-    if len(minHeap) > 5:
-        heapq.heappop(minHeap)
+    line = line.strip()
+    if line:
+        link, numStr = line.split('\t')
+        num = int(numStr)
+        heapq.heappush(minHeap, (num, link))
+        if len(minHeap) > 5:
+            heapq.heappop(minHeap)
 
 while heapq:
     num, link = heapq.heappop(minHeap)

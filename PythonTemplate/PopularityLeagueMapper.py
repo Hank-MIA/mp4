@@ -14,7 +14,9 @@ with open(leaguePath) as f:
 
 
 for line in sys.stdin:
-    mem, numStr = line.strip().split('\t')
-    if mem in leagueSet:
-        print(line.strip())
+    line = line.strip()
+    if line:
+        mem, numStr = line.strip().split('\t')
+        if mem in leagueSet:
+            print(line.strip())
 

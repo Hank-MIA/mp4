@@ -3,8 +3,9 @@ import sys
 
 
 for line in sys.stdin:
-    _, links = line.split(':')
-    links = links.strip()
-    for link in links.split(' '):
-        print('%s\t%s' % (link, 1))
+    if line.strip():
+        _, links = line.split(':')
+        links = links.strip()
+        for link in links.split(' '):
+            print('%s\t%s' % (link, 1))
 
