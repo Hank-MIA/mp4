@@ -14,15 +14,15 @@ indexedLinks = []
 index = 0
 valueSameIndex = 0
 preVal, link = heapq.heappop(minHeap)
-heapq.heappush(indexedLinks, (link, index))
+heapq.heappush(indexedLinks, (int(link), index))
 
 while minHeap:
     val, link = heapq.heappop(minHeap)
     index += 1
     if val == preVal:
-        heapq.heappush(indexedLinks, (link, valueSameIndex))
+        heapq.heappush(indexedLinks, (int(link), valueSameIndex))
     else:
-        heapq.heappush(indexedLinks, (link, index))
+        heapq.heappush(indexedLinks, (int(link), index))
         valueSameIndex = index
         preVal = val
 
