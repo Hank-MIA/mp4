@@ -14,7 +14,7 @@ indexedLinks = []
 index = 0
 valueSameIndex = 0
 preVal, link = heapq.heappop(minHeap)
-heapq.heappush((link, index))
+heapq.heappush(indexedLinks, (link, index))
 
 while minHeap:
     val, link = heapq.heappop(minHeap)
