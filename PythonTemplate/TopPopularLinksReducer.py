@@ -11,7 +11,7 @@ for line in sys.stdin:
         link, numStr = line.split('\t')
         num = int(numStr)
         heapq.heappush(minHeap, (num, link))
-        if len(minHeap) > 5:
+        if len(minHeap) > 10:
             heapq.heappop(minHeap)
 
 while minHeap:
